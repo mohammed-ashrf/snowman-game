@@ -11,7 +11,7 @@ const words = [
 ];
   
 // Define the maximum number of incorrect guesses allowed
-const maxWrongGuesses = 6;
+const maxWrongGuesses = 8;
 
 let wordToGuess = '';
 let guessedLetters = [];
@@ -91,8 +91,8 @@ function initializeGame() {
 
 // Update the Melting Snowman graphic
 function updateMeltingSnowmanGraphic() {
-    const meltingSnowmanContainer = document.querySelector('.MeltingSnowman');
-    meltingSnowmanContainer.innerHTML = `<img src="images/MeltingSnowman${imageCount}.png" alt="MeltingSnowman ${imageCount}">`;
+    const meltingSnowmanContainer = document.querySelector('.Melting-Snowman');
+    meltingSnowmanContainer.innerHTML = `<img src="images/Snowman-${imageCount}.jpg" alt="MeltingSnowman ${imageCount}">`;
     imageCount++;
 }
 
@@ -109,8 +109,8 @@ function checkWinOrLose() {
     } else if (wrongGuesses >= maxWrongGuesses) {
         const messageContainer = document.querySelector('.message');
         messageContainer.innerText = `You lose! The word was "${wordToGuess}".`;
-        const meltingSnowmanContainer = document.querySelector('.MeltingSnowman');
-        meltingSnowmanContainer.innerHTML = `<img src="images/gameover.png" alt="gameover">`;
+        const meltingSnowmanContainer = document.querySelector('.Melting-Snowman');
+        meltingSnowmanContainer.innerHTML = `<img src="images/Snowman-END.jpg" alt="gameover">`;
         const letterButtons = document.querySelectorAll('.letters button');
         letterButtons.forEach(button => {
         button.disabled = true;
